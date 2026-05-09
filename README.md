@@ -11,15 +11,15 @@ A simple terminal-based tic-tac-toe game written in C++.
 ## Build
 
 ```bash
-g++ main.cpp -o app
+g++ src/main.cpp -o build/app
 ```
 
 ## Run
 
 ```bash
-./app
+./build/app
 ```
 
 ## Notes
 
-Scores are stored locally in `Score/`.
+Scores are stored locally in `data/Score/`.
