@@ -232,7 +232,7 @@ void ScoreBoard(){
             cout << num << ".| " << i.GetName('X') << " (X) | " << i.GetScore('X') << " : " << i.GetScore('O') << " | (O) " << i.GetName('O') << endl;
         }
         cout << "_________________\n";
-        cout << "1.|Delete Score\n2.|Clear Score\n3.|Back\n\n- ";
+        cout << "1.|Delete data/Score\n2.|Clear data/Score\n3.|Back\n\n- ";
         opt = char(getchar());
         buffer;
         switch(opt){
@@ -252,10 +252,10 @@ void ScoreBoard(){
 void SetScore(){
     fstream sX, sO, nX, nO;
     vector<Score>::iterator it = score.begin();
-    sX.open("Score/tScore_X.txt", ios::out);
-    sO.open("Score/tScore_O.txt", ios::out);
-    nX.open("Score/tName_X.txt", ios::out);
-    nO.open("Score/tName_O.txt", ios::out);
+    sX.open("data/Score/tScore_X.txt", ios::out);
+    sO.open("data/Score/tScore_O.txt", ios::out);
+    nX.open("data/Score/tName_X.txt", ios::out);
+    nO.open("data/Score/tName_O.txt", ios::out);
     for(Score& i : score){
         if(it != score.begin()){
             sX << endl;
@@ -273,14 +273,14 @@ void SetScore(){
     sO.close();
     nX.close();
     nO.close();
-    remove("Score/Score_X.txt");
-    remove("Score/Score_O.txt");
-    remove("Score/Name_X.txt");
-    remove("Score/Name_O.txt");
-    rename("Score/tScore_X.txt", "Score/Score_X.txt");
-    rename("Score/tScore_O.txt", "Score/Score_O.txt");
-    rename("Score/tName_X.txt", "Score/Name_X.txt");
-    rename("Score/tName_O.txt", "Score/Name_O.txt");
+    remove("data/Score/Score_X.txt");
+    remove("data/Score/Score_O.txt");
+    remove("data/Score/Name_X.txt");
+    remove("data/Score/Name_O.txt");
+    rename("data/Score/tScore_X.txt", "data/Score/Score_X.txt");
+    rename("data/Score/tScore_O.txt", "data/Score/Score_O.txt");
+    rename("data/Score/tName_X.txt", "data/Score/Name_X.txt");
+    rename("data/Score/tName_O.txt", "data/Score/Name_O.txt");
 }
 
 void GetScore(){
@@ -288,10 +288,10 @@ void GetScore(){
     fstream FsX, FsO, FnX, FnO;
     string TsX, TsO, TnX, TnO;
     score.clear();
-    FsX.open("Score/Score_X.txt", ios::in);
-    FsO.open("Score/Score_O.txt", ios::in);
-    FnX.open("Score/Name_X.txt", ios::in);
-    FnO.open("Score/Name_O.txt", ios::in);
+    FsX.open("data/Score/Score_X.txt", ios::in);
+    FsO.open("data/Score/Score_O.txt", ios::in);
+    FnX.open("data/Score/Name_X.txt", ios::in);
+    FnO.open("data/Score/Name_O.txt", ios::in);
     while(getline(FsX, TsX)) sX.push_back(TsX);
     while(getline(FsO, TsO)) sO.push_back(TsO);
     while(getline(FnX, TnX)) nX.push_back(TnX);
