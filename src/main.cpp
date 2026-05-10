@@ -252,10 +252,10 @@ void ScoreBoard(){
 void SetScore(){
     fstream sX, sO, nX, nO;
     vector<Score>::iterator it = score.begin();
-    sX.open("data/Score/tScore_X.txt", ios::out);
-    sO.open("data/Score/tScore_O.txt", ios::out);
-    nX.open("data/Score/tName_X.txt", ios::out);
-    nO.open("data/Score/tName_O.txt", ios::out);
+    sX.open("temp/tScore_X.txt", ios::out);
+    sO.open("temp/tScore_O.txt", ios::out);
+    nX.open("temp/tName_X.txt", ios::out);
+    nO.open("temp/tName_O.txt", ios::out);
     for(Score& i : score){
         if(it != score.begin()){
             sX << endl;
@@ -277,10 +277,10 @@ void SetScore(){
     remove("data/Score/Score_O.txt");
     remove("data/Score/Name_X.txt");
     remove("data/Score/Name_O.txt");
-    rename("data/Score/tScore_X.txt", "data/Score/Score_X.txt");
-    rename("data/Score/tScore_O.txt", "data/Score/Score_O.txt");
-    rename("data/Score/tName_X.txt", "data/Score/Name_X.txt");
-    rename("data/Score/tName_O.txt", "data/Score/Name_O.txt");
+    rename("temp/tScore_X.txt", "data/Score/Score_X.txt");
+    rename("temp/tScore_O.txt", "data/Score/Score_O.txt");
+    rename("temp/tName_X.txt", "data/Score/Name_X.txt");
+    rename("temp/tName_O.txt", "data/Score/Name_O.txt");
 }
 
 void GetScore(){
