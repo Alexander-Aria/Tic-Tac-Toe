@@ -13,6 +13,10 @@ A simple terminal-based tic-tac-toe game written in C++.
 ```bash
 g++ src/main.cpp -o build/app
 ```
+or
+```bash
+make
+```
 
 ## Run
 
