@@ -8,12 +8,14 @@ A simple terminal-based tic-tac-toe game written in C++.
 - Score saving
 - Terminal interface
 
+## Requirements
+
+- Linux
+- g++
+- Make
+
 ## Build
 
-```bash
-g++ src/main.cpp -o build/app
-```
-or
 ```bash
 make
 ```
@@ -21,9 +23,10 @@ make
 ## Run
 
 ```bash
-./build/app
+make run
 ```
 
 ## Notes
 
+For manual build and run, instructions are in `Makefile`. 
 Scores are stored locally in `data/Score/`.
